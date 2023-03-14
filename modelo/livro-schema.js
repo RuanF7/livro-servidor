@@ -1,0 +1,1 @@
+import Banco from "./conexao";
