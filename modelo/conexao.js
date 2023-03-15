@@ -1,16 +1,24 @@
-const { default: mongoose } = require("livraria");
+const banco = require("mongoose");
 
 
-const BancoSchema = new mongoose.Schema({
-
-  options: {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  
+banco.connect("mongodb://localhost:27017", {
+  option: {
+    useNewUrlParser: true,
+    useUnifieldTopology: true,
   }
+  
 })
+  .then(() => {
+    console.log("Conectado ao MongoDB!");
+  })
+  .catch((err) => console.log(err));
+
+  banco.Promise = global.Promise;
+
+  module.exports = banco;
 
 
-const Banco = mongoose.model("Banco", BancoSchema);
 
-module.exports = Banco;
+
+/*banco.on('error', (error) => console.log(error));
+banco.once('open', () => console.log('📦 Connected to the database!'))*/
