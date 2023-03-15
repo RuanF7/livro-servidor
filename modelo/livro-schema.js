@@ -24,5 +24,5 @@ const LivroSchema = new banco.Schema({
 
 const Livro = banco.model("Livro", LivroSchema);
 
-banco.exports = Livro;
+module.exports = Livro;
 
