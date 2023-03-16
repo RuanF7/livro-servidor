@@ -6,7 +6,7 @@ const LivroSchema = new banco.Schema({
   },
 
   titulo: {
-    type: String
+    type: String 
   },
 
   codEditora: {
