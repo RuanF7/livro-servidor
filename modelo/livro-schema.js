@@ -1,4 +1,4 @@
-import banco from "./conexao";
+const banco = require("../modelo/conexao");
 
 const LivroSchema = new banco.Schema({
   _id: {
