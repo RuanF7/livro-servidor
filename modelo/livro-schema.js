@@ -10,7 +10,7 @@ const LivroSchema = new banco.Schema({
   },
 
   codEditora: {
-    typr: Number
+    type: Number
   },
 
   resumo: {
