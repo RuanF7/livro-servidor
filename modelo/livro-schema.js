@@ -6,19 +6,23 @@ const LivroSchema = new banco.Schema({
   },
 
   titulo: {
-    type: String 
+    type: String,
+    require: true,
   },
 
   codEditora: {
-    type: Number
+    type: Number,
+    require: true,
   },
 
   resumo: {
-   type: String
+   type: String,
+   require: true,
   },
 
   autores: {
-   type: [String]
+   type: [String],
+   require: true,
   }
 });
 

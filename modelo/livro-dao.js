@@ -36,7 +36,7 @@ exports.obterLivros = (req, res) => {
 };
 
 exports.incluir = async (req, res) => {
-  const { titulo, resumo, editora, autores } = req.body;
+  const { titulo, resumo, codEditora, autores } = req.body;
 
   try {
     if (await Livro.findOne({ titulo }))
@@ -45,7 +45,7 @@ exports.incluir = async (req, res) => {
     const livro = await Livro.create({
       titulo,
       resumo,
-      editora,
+      codEditora,
       autores,
     });
 
@@ -55,7 +55,7 @@ exports.incluir = async (req, res) => {
   }
 };
 
-exports.update = (req, res) => {
+/*exports.update = (req, res) => {
   const id = req.params.id;
 
   Livro.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
@@ -73,7 +73,7 @@ exports.update = (req, res) => {
         .status(500)
         .send({ message: "Erro: Nao foi possível atualizar as informações do livro" });
     });
-};
+};*/
 
 exports.excluir = async (req, res) => {
   const id = req.params.id;

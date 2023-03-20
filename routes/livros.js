@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const obterLivros = require('../modelo/livro-dao')
+const controller = require('../modelo/livro-dao')
 
 const services = require("../service/render");
 
@@ -16,9 +16,9 @@ router.get("/atualizar_livro", services.atualizar_livro);
 /**
  *  @description API Route
  */
-router.post("/api/livro", obterLivros.cadastrar);
-router.get("/api/livro", obterLivros.lista);
-router.put("/api/livro/:id", obterLivros.update);
-router.delete("/api/livro/:id", obterLivros.delete);
+router.post("/api/livro", controller.incluir);
+router.get("/api/livro", controller.obterLivros);
+router.excluir("/api/livro/:id", controller.excluir);
+
 
 module.exports = router;
